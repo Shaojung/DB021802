@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.io.ByteArrayOutputStream;
@@ -90,5 +91,7 @@ class MyTask extends AsyncTask<String, Integer, Bitmap>
     @Override
     protected void onPostExecute(Bitmap bitmap) {
         super.onPostExecute(bitmap);
+        ImageView img = (ImageView) ((MainActivity)this.context).findViewById(R.id.imageView);
+        img.setImageBitmap(bitmap);
     }
 }
